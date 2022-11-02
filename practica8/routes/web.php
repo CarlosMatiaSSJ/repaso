@@ -22,7 +22,7 @@ Route::get('registrar',[controladorFormulario::class,'showRegistrar'])->name('ap
 
 
 // Ruta para envío post
-Route::post('guardarRegistro',[controladorFormulario::class,'procesarRegistro ']);
+Route::post('guardarRegistro',[controladorFormulario::class,'procesarFormulario']);
 
 
 
