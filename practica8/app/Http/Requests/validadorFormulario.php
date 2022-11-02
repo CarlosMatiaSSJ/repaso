@@ -24,7 +24,13 @@ class validadorFormulario extends FormRequest
     public function rules()
     {
         return [
-            //
+            
+            'txtIsbn'=>'required|numeric', 
+            'txtTitulo'=>'required',
+            'txtAutor'=>'required',
+            'txtPaginas'=>'required|numeric',
+            'txtEditorial'=>'required',
+            'txtEmail'=>'required'
         ];
     }
 }

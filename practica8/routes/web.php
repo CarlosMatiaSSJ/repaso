@@ -1,6 +1,9 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\controladorFormulario;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('principal');
-});
+//Rutas individuales para controlador
+Route::get('/',[controladorFormulario::class,'showPrincipal'])->name('apodoPrincipal');  
+Route::get('registrar',[controladorFormulario::class,'showRegistrar'])->name('apodoRegistrar');
 
-Route::get('registrar', function () {
-    return view('registrar');
-});
+
+// Ruta para envío post
+Route::post('guardarRegistro',[controladorFormulario::class,'procesarRegistro ']);
+
+
+
+
