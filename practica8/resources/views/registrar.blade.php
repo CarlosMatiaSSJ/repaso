@@ -1,6 +1,6 @@
 @extends('template')
 @section('titulo')
-    Principal
+    Registrar 
 @stop
 
 
