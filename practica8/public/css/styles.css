@@ -1,5 +1,5 @@
 body{
-    background-color: blueviolet;
+    background-color: #DFDEFF;
 }
 * {
     margin: 0;
@@ -17,4 +17,19 @@ body{
     height: 2rem;
     background-color: #e2e2e2
   }
+
+
+
+img{
+    max-width: 300px;
+}
+
+.carousel-inner{ 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.carousel .item > img { display: inline-block; }
 
