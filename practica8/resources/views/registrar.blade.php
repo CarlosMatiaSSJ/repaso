@@ -24,7 +24,7 @@
 {{-- Formulario --}}
 <div class="card">
     <div class="card-body">
-        <form action="guardarRegistro" method="post">
+        <form action="{{route('libroStore')}}" method="post">
             @csrf
             <div class="mb-3">
               <label for="isbn" class="form-label">ISBN</label>

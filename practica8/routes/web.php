@@ -3,7 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorFormulario;
-
+use App\Http\Controllers\controladorLibros;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +25,15 @@ Route::get('registrarAutor',[controladorFormulario::class,'showRegistrarAutor'])
 // Ruta para envío post
 Route::post('guardarRegistro',[controladorFormulario::class,'procesarFormulario']);
 Route::post('validarAutor',[controladorFormulario::class,'procesarAutor']);
+
+//Libros
+//index
+Route::get('libros/index',[controladorLibros::class,'index'])->name('libroIndex');
+//create
+Route::get('libros/create',[controladorLibros::class,'create'])->name('libroCreate');
+//store
+Route::post('libros/store',[controladorLibros::class,'store'])->name('libroStore');
+
 
 
 

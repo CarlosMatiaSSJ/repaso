@@ -14,10 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('_tabla_autores', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+            $table->increments('idAutor');
+            $table->string('nombreAutor');   
+            $table->string('fechaNacimientoAutor');
+            $table->string('librosAutor');
+    });
+    }   
 
     /**
      * Reverse the migrations.

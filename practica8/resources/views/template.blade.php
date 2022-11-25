@@ -29,10 +29,13 @@
                 <a class="nav-link active" aria-current="page" href="/">Principal</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/registrar">Registrar Libro</a>
+                <a class="nav-link" href="{{route('libroIndex')}}">Ver libros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/registrarAutor">Registrar Autor</a>
+                <a class="nav-link" {{ request()->routeIs('libroIndex')? '':'Hidden' }}  href="{{route('libroCreate')}}">Registrar libro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/registrarAutor">Ver autores</a>
               </li>
             </ul>
           </div>

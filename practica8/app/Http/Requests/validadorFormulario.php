@@ -28,7 +28,7 @@ class validadorFormulario extends FormRequest
        
         return [
             
-            'txtIsbn'=>'required|numeric', 
+            'txtIsbn'=>'required|numeric|digits_between:13,99', 
             'txtTitulo'=>'required',
             'txtAutor'=>'required',
             'txtPaginas'=>'required|numeric',

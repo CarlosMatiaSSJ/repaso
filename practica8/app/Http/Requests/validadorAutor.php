@@ -26,7 +26,7 @@ class validadorAutor extends FormRequest
         return [
             'txtNOMBRECOMPLETO'=>'required|min:4',
             'txtFECHANACIMIENTO'=>'required|min:4',
-            'txtLIBROSPUBLICADOS'=>'required|max:4'
+            'txtLIBROSPUBLICADOS'=>'required|digits_between:1,99'
         ];
     }
 }

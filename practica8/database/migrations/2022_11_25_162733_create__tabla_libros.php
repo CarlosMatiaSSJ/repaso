@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('_tabla_libros', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('idLibro');
+            $table->string('isbnLibro');
+            $table->string('tituloLibro');
+            $table->string('autorLibro');
+            $table->string('paginasLibro');
+            $table->string('editorialLibro');
+            $table->string('emailLibro');   
         });
     }
 
