@@ -14,6 +14,15 @@
       )</script>"!!}
       
 @endif
+@if (session()->has('edición'))
+    <?php $titulo = session()->get('titulo')?>
+    {!!"<script>Swal.fire(
+        'Correcto!',
+        'Se ha editado el libro: {$titulo} correctamente!',
+        'success'
+      )</script>"!!}
+      
+@endif
 
 
 {{-- Manejo de errores --}}
@@ -41,7 +50,7 @@
                     <td >{{$libros->tituloLibro}}</td>
                     <td >{{$libros->autorLibro}}</td>
                     <td>
-                        <button class="btn btn-warning">Editar</button>
+                        <a type="button" href="{{route('libroEdit',$libros->idLibro)}}" class="btn btn-warning">Editar</a>
                         <button class="btn btn-danger">Eliminar</button>
                     </td>
                 </tr>

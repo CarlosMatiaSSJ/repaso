@@ -46,7 +46,7 @@ class controladorLibros extends Controller
             "editorialLibro" =>  $request->input('txtEditorial'),
             "emailLibro" => $request->input('txtEmail')
         ]);
-        return redirect('libros/index')->with('confirmación','abc')->with('titulo',$request->txtTitulo);;
+        return redirect('libros/index')->with('confirmación','abc')->with('titulo',$request->txtTitulo);
         }
 
     /**
@@ -68,7 +68,8 @@ class controladorLibros extends Controller
      */
     public function edit($id)
     {
-        //
+        $consultaID = DB::table('_tabla_libros')->where('idLibro',$id)->first();
+        return view('editarLibro',compact('consultaID'));
     }
 
     /**
@@ -78,9 +79,17 @@ class controladorLibros extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(validadorFormulario $request, $id)
     {
-        //
+        DB::table('_tabla_libros')->where('idLibro',$id)->update([
+            "isbnLibro" => $request->input('txtIsbn'),
+            "tituloLibro" => $request->input('txtTitulo'),
+            "autorLibro" =>  $request->input('txtAutor'),
+            "paginasLibro" =>  $request->input('txtPaginas'),
+            "editorialLibro" =>  $request->input('txtEditorial'),
+            "emailLibro" => $request->input('txtEmail')
+        ]);
+        return redirect('libros/index')->with('edición','abc')->with('titulo',$request->txtTitulo);
     }
 
     /**

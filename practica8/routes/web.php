@@ -33,6 +33,10 @@ Route::get('libros/index',[controladorLibros::class,'index'])->name('libroIndex'
 Route::get('libros/create',[controladorLibros::class,'create'])->name('libroCreate');
 //store
 Route::post('libros/store',[controladorLibros::class,'store'])->name('libroStore');
+//edit
+Route::get('libros/{id}/edit',[controladorLibros::class,'edit'])->name('libroEdit');
+//update
+Route::put('libros/{id}/update',[controladorLibros::class,'update'])->name('libroUpdate');
 
 
 
