@@ -16,14 +16,15 @@ use App\Http\Controllers\controladorFormulario;
 |
 */
 
-//Rutas individuales para controlador
+//Rutas individuales para controlador    
 Route::get('/',[controladorFormulario::class,'showPrincipal'])->name('apodoPrincipal');  
 Route::get('registrar',[controladorFormulario::class,'showRegistrar'])->name('apodoRegistrar');
+Route::get('registrarAutor',[controladorFormulario::class,'showRegistrarAutor'])->name('apodoRegistrarAutor');
 
 
 // Ruta para envío post
 Route::post('guardarRegistro',[controladorFormulario::class,'procesarFormulario']);
-
+Route::post('validarAutor',[controladorFormulario::class,'procesarAutor']);
 
 
 

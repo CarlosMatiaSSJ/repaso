@@ -6,11 +6,13 @@
 {{-- SweetAlert --}}
 
 @if (session()->has('confirmación'))
+    <?php $titulo = session()->get('titulo')?>
     {!!"<script>Swal.fire(
         'Correcto!',
-        'Se ha registrado correctamente!',
+        'Se ha registrado {$titulo} correctamente!',
         'success'
       )</script>"!!}
+      
 @endif
 
 
@@ -59,7 +61,7 @@
     </div>
   </div>
 
-
+  
 
 
 @stop
