@@ -23,6 +23,14 @@
       )</script>"!!}
       
 @endif
+@if (session()->has('eliminación'))
+    {!!"<script>Swal.fire(
+        'Correcto!',
+        'Se ha eliminado el libro correctamente!',
+        'success'
+      )</script>"!!}
+      
+@endif
 
 
 {{-- Manejo de errores --}}
@@ -51,7 +59,7 @@
                     <td >{{$libros->autorLibro}}</td>
                     <td>
                         <a type="button" href="{{route('libroEdit',$libros->idLibro)}}" class="btn btn-warning">Editar</a>
-                        <button class="btn btn-danger">Eliminar</button>
+                        <a type="button" class="btn btn-danger" href="{{route('libroShow',$libros->idLibro)}}">Eliminar</a>
                     </td>
                 </tr>
                 @endforeach

@@ -57,7 +57,8 @@ class controladorLibros extends Controller
      */
     public function show($id)
     {
-        //
+        $consultaID = DB::table('_tabla_libros')->where('idLibro',$id)->first();
+        return view('eliminarLibro', compact('consultaID'));
     }
 
     /**
@@ -100,6 +101,7 @@ class controladorLibros extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('_tabla_libros')->where('idLibro',$id)->delete();
+        return redirect('libros/index')->with('eliminación','abc');
     }
 }

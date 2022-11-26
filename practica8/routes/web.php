@@ -37,6 +37,10 @@ Route::post('libros/store',[controladorLibros::class,'store'])->name('libroStore
 Route::get('libros/{id}/edit',[controladorLibros::class,'edit'])->name('libroEdit');
 //update
 Route::put('libros/{id}/update',[controladorLibros::class,'update'])->name('libroUpdate');
+//show
+Route::get('libros/{id}/show',[controladorLibros::class,'show'])->name('libroShow');
+//show
+Route::delete('libros/{id}/destroy',[controladorLibros::class,'destroy'])->name('libroDestroy');
 
 
 
