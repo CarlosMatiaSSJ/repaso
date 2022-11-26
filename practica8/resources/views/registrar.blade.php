@@ -39,10 +39,10 @@
 
 
             <div class=""><label for="autor" class="form-label">Autor</label></div>
-            <select class="form-select" aria-label="Default select example" id="autor">
+            <select class="form-select" aria-label="Default select example" id="autor" name="txtAutor">
                 <option selected disabled>Selecciona...</option>
                 @foreach ($consultaAutores as $autor)
-                <option value="{{$autor->idAutor}}">{{$autor->nombreAutor}}</option>
+                <option value="{{$autor->nombreAutor}}">{{$autor->nombreAutor}}</option>
                 @endforeach
               </select>
               <p class="text-primary fst-italic">{{$errors->first('txtAutor')}}</p>
