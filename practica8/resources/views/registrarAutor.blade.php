@@ -21,7 +21,7 @@
 {{-- Formulario --}}
 <div class="card">
     <div class="card-body">
-        <form action="validarAutor" method="post">
+        <form action="{{route('autorStore')}}" method="post">
             @csrf
             <div class="mb-3">
               <label for="NC" class="form-label">Nombre Completo: </label>

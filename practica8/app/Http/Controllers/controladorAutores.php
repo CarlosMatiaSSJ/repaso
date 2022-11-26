@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\validadorAutor;
 use Illuminate\Http\Request;
 use DB;
 
@@ -34,9 +35,14 @@ class controladorAutores extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(validadorAutor $request)
     {
-        //
+        DB::table('_tabla_autores')->insert([
+            "nombreAutor" => $request->input('txtNOMBRECOMPLETO'),
+            "fechaNacimientoAutor" => $request->input('txtFECHANACIMIENTO'),
+            "librosAutor" =>  $request->input('txtLIBROSPUBLICADOS'),
+        ]);
+        return redirect('autores/index')->with('confirmación','abc')->with('titulo',$request->txtNOMBRECOMPLETO);
     }
 
     /**
