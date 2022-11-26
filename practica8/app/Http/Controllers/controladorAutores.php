@@ -64,7 +64,8 @@ class controladorAutores extends Controller
      */
     public function edit($id)
     {
-        //
+        $consultaAutor = DB::table('_tabla_autores')->where('idAutor',$id)->first();
+        return view('editarAutor', compact('consultaAutor'));
     }
 
     /**
@@ -74,9 +75,15 @@ class controladorAutores extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(validadorAutor $request, $id)
     {
-        //
+        DB::table('_tabla_autores')->where('idAutor',$id)->update([
+            "nombreAutor" => $request->input('txtNOMBRECOMPLETO'),
+            "fechaNacimientoAutor" => $request->input('txtFECHANACIMIENTO'),
+            "librosAutor" =>  $request->input('txtLIBROSPUBLICADOS'),
+           
+        ]);
+        return redirect('autores/index')->with('edición','abc')->with('titulo',$request->txtNOMBRECOMPLETO);
     }
 
     /**

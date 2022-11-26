@@ -58,7 +58,7 @@
                     <td >{{$autor->fechaNacimientoAutor}}</td>
                     <td ><a type="button" class="btn btn-success" href="">Ver libros</a></td>
                     <td>
-                        <a type="button" href="{{route('libroEdit',$autor->idAutor)}}" class="btn btn-warning">Editar</a>
+                        <a type="button" href="{{route('autorEdit',$autor->idAutor)}}" class="btn btn-warning">Editar</a>
                         <a type="button" class="btn btn-danger" href="{{route('libroShow',$autor->idAutor)}}">Eliminar</a>
                     </td>
                 </tr>
