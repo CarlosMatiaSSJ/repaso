@@ -35,7 +35,10 @@
                 <a class="nav-link" {{ request()->routeIs('libroIndex')? '':'Hidden' }}  href="{{route('libroCreate')}}">Registrar libro</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/registrarAutor">Ver autores</a>
+                <a class="nav-link" href="{{route('autorIndex')}}">Ver autores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" {{ request()->routeIs('autorIndex')? '':'Hidden' }}  href="{{route('libroCreate')}}">Registrar Autor</a>
               </li>
             </ul>
           </div>
