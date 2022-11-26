@@ -1,6 +1,6 @@
 @extends('template')
 @section('titulo')
-    Autores 
+    Libros 
 @stop
 @section('contenido')
 {{-- SweetAlert --}}
@@ -18,7 +18,7 @@
     <?php $titulo = session()->get('titulo')?>
     {!!"<script>Swal.fire(
         'Correcto!',
-        'Se ha editado el autor: {$titulo} correctamente!',
+        'Se ha editado el libro: {$titulo} correctamente!',
         'success'
       )</script>"!!}
       
@@ -26,7 +26,7 @@
 @if (session()->has('eliminación'))
     {!!"<script>Swal.fire(
         'Correcto!',
-        'Se ha eliminado el autor correctamente!',
+        'Se ha eliminado el libro correctamente!',
         'success'
       )</script>"!!}
       
@@ -41,25 +41,26 @@
 {{-- Libros --}}
 
 <div class="card">
+    <div class="card-header"><h1>libros del autor</h1></div>
     <div class="card-body">
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">Autor:</th>
-                <th scope="col">Fecha de Nacimiento:</th>
-                <th scope="col">Libros:</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Título</th>
+                <th scope="col">Autor</th>
                 <th scope="col">Acciones:</th>
               </tr>
             </thead>
             <tbody>
-                @foreach ($consultaAutores as $autor)
+                @foreach ($consultarLibros as $libros)
                 <tr>
-                    <th scope="row">{{$autor->nombreAutor}}</th>
-                    <td >{{$autor->fechaNacimientoAutor}}</td>
-                    <td ><a type="button" class="btn btn-success" href="{{route('autorLibros',$autor->nombreAutor)}}">Ver libros</a></td>
+                    <th scope="row">{{$libros->isbnLibro}}</th>
+                    <td >{{$libros->tituloLibro}}</td>
+                    <td >{{$libros->autorLibro}}</td>
                     <td>
-                        <a type="button" href="{{route('autorEdit',$autor->idAutor)}}" class="btn btn-warning">Editar</a>
-                        <a type="button" class="btn btn-danger" href="{{route('autorShow',$autor->idAutor)}}">Eliminar</a>
+                        <a type="button" href="{{route('libroEdit',$libros->idLibro)}}" class="btn btn-warning">Editar</a>
+                        <a type="button" class="btn btn-danger" href="{{route('libroShow',$libros->idLibro)}}">Eliminar</a>
                     </td>
                 </tr>
                 @endforeach

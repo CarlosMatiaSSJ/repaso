@@ -55,8 +55,10 @@ Route::get('autores/{id}/edit',[controladorAutores::class,'edit'])->name('autorE
 Route::put('autores/{id}/update',[controladorAutores::class,'update'])->name('autorUpdate');
 //show
 Route::get('autores/{id}/show',[controladorAutores::class,'show'])->name('autorShow');
-//show
+//destroy
 Route::delete('autores/{id}/destroy',[controladorAutores::class,'destroy'])->name('autorDestroy');
+//mostrarLibros
+Route::get('autores/{id}/libros',[controladorAutores::class,'librosPublicados'])->name('autorLibros');
 
 
 

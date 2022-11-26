@@ -27,7 +27,8 @@ class controladorLibros extends Controller
      */
     public function create()
     {
-        return view('registrar');
+        $consultaAutores = DB::table('_tabla_autores')->get();
+        return view('registrar', compact('consultaAutores'));
     }
 
     /**
@@ -70,7 +71,9 @@ class controladorLibros extends Controller
     public function edit($id)
     {
         $consultaID = DB::table('_tabla_libros')->where('idLibro',$id)->first();
-        return view('editarLibro',compact('consultaID'));
+        $consultaAutores = DB::table('_tabla_autores')->get();
+    
+        return view('editarLibro',compact('consultaID','consultaAutores'));
     }
 
     /**

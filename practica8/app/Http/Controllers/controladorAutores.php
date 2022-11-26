@@ -53,8 +53,9 @@ class controladorAutores extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $consultaID = DB::table('_tabla_autores')->where('idAutor',$id)->first();
+        return view('eliminarAutor', compact('consultaID'));
+       }
 
     /**
      * Show the form for editing the specified resource.
@@ -94,6 +95,13 @@ class controladorAutores extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('_tabla_autores')->where('idAutor',$id)->delete();
+        return redirect('autores/index')->with('eliminación','abxc');
+    }
+
+    public function librosPublicados($id)
+    {
+        $consultarLibros = DB::table('_tabla_libros')->where('autorLibro',$id)->get();
+        return view('autorLibros',compact('consultarLibros'));
     }
 }

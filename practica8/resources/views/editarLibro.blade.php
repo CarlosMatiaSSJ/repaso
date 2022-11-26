@@ -37,11 +37,17 @@
                 <input type="text" class="form-control" id="titulo" name="txtTitulo" value="{{$consultaID->tituloLibro}}">
                 <p class="text-primary fst-italic">{{$errors->first('txtTitulo')}}</p>
             </div>
-            <div class="mb-3">
-                <label for="autor" class="form-label">Autor</label>
-                <input type="text" class="form-control" id="autor" name="txtAutor" value="{{$consultaID->autorLibro}}">
-                <p class="text-primary fst-italic">{{$errors->first('txtAutor')}}</p>
-            </div>
+            
+
+            <div class=""><label for="autor" class="form-label">Autor</label></div>
+            <select class="form-select" aria-label="Default select example" id="autor" name="txtAutor">
+                <option selected disabled>Selecciona...</option>
+                @foreach ($consultaAutores as $autor)
+                <option value="{{$autor->nombreAutor}}">{{$autor->nombreAutor}}</option>
+                @endforeach
+              </select>
+            <p class="text-primary fst-italic">{{$errors->first('txtAutor')}}</p>
+            
             <div class="mb-3">
                 <label for="paginas" class="form-label">Páginas</label>
                 <input type="text" class="form-control" id="paginas" name="txtPaginas" value="{{$consultaID->paginasLibro}}">
