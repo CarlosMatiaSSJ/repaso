@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('idLibro');
             $table->string('isbnLibro');
             $table->string('tituloLibro');
-            $table->string('autorLibro');
+            $table->integer('autorLibro')->references('idAutor')->on('_tabla_autores')->onDelete('cascade');
             $table->string('paginasLibro');
             $table->string('editorialLibro');
             $table->string('emailLibro');   

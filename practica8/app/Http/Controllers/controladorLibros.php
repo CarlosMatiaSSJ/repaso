@@ -16,8 +16,9 @@ class controladorLibros extends Controller
      */
     public function index()
     {
+        $consultarAutores = DB::table('_tabla_autores')->get();
         $consultarLibros = DB::table('_tabla_libros')->get();
-        return view('libros', compact('consultarLibros'));
+        return view('libros', compact('consultarLibros'),compact('consultarAutores'));
     }
 
     /**

@@ -56,7 +56,7 @@
                 <tr>
                     <th scope="row">{{$autor->nombreAutor}}</th>
                     <td >{{$autor->fechaNacimientoAutor}}</td>
-                    <td ><a type="button" class="btn btn-success" href="{{route('autorLibros',$autor->nombreAutor)}}">Ver libros</a></td>
+                    <td ><a type="button" class="btn btn-success" href="{{route('autorLibros',$autor->idAutor)}}">Ver libros</a></td>
                     <td>
                         <a type="button" href="{{route('autorEdit',$autor->idAutor)}}" class="btn btn-warning">Editar</a>
                         <a type="button" class="btn btn-danger" href="{{route('autorShow',$autor->idAutor)}}">Eliminar</a>

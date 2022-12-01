@@ -47,16 +47,19 @@
               <tr>
                 <th scope="col">ISBN</th>
                 <th scope="col">Título</th>
-                <th scope="col">Autor</th>
+                <th scope="col">Páginas</th>
                 <th scope="col">Acciones:</th>
               </tr>
             </thead>
             <tbody>
                 @foreach ($consultarLibros as $libros)
+                
+                    
+                
                 <tr>
                     <th scope="row">{{$libros->isbnLibro}}</th>
                     <td >{{$libros->tituloLibro}}</td>
-                    <td >{{$libros->autorLibro}}</td>
+                    <td >{{$libros->paginasLibro}}</td>
                     <td>
                         <a type="button" href="{{route('libroEdit',$libros->idLibro)}}" class="btn btn-warning">Editar</a>
                         <a type="button" class="btn btn-danger" href="{{route('libroShow',$libros->idLibro)}}">Eliminar</a>
